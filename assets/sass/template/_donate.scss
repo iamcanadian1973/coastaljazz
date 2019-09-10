@@ -1,0 +1,155 @@
+form input:focus {
+    outline: none;
+}
+
+#IATS_PaymentBoxDiv {
+    label.IATS_PaymentLabelOnLeft {
+        display: block;
+        float: none;
+        width: 100%;
+        padding-left: 0;
+        padding-right: rem-calc(20);
+        //font-weight: 400;
+        font-size: rem-calc(16);
+        margin-bottom: rem-calc(5);
+        position: relative;
+        
+        span {
+            position: absolute;
+            top: 0;   
+        }
+    }
+}
+
+#IATS_PaymentBoxDiv input.IATS_PaymentInputField {
+    width: 100%;
+    border: 1px solid #979797;
+    padding: 12px 12px 13px 12px!important;
+}
+
+.IATS_Div form {
+    input[type="text"], 
+    input[type="input"], 
+    select, 
+    textarea {
+        color: #4A4A4A!important;
+        outline: none;	
+        border: 1px solid #979797;
+        background-color: #FFFFFF;
+        width: 100%;
+        border: 1px solid #979797!important;
+        padding: 12px 12px 13px 12px!important;
+    }
+}
+
+input.IATS_OtherAmount {
+    border: 1px solid #979797!important;
+    padding: 12px 12px 13px 12px!important;
+    line-height: 1.15!important;
+}
+
+#IATS_PaymentBoxDiv select.IATS_PaymentInputField {
+    color: #4A4A4A!important;
+    padding: 9px!important;
+    margin-top: 0!important;
+}
+
+.IATS_Div form textarea {
+    margin-top: 8px;	
+    padding: 12px!important;
+}
+
+.IATS_Div form select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='%23444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+    background-position: 98% 50%;
+    background-repeat: no-repeat;	
+    
+}
+
+
+div.IATS_PaymentFrequencyItemDiv {
+    padding: .2em 0 .2em 0;
+    padding-left: 0!important;
+    margin: 0 0.1em 0.59em 0.1em;
+}
+
+
+.IATS_Action {
+    margin-bottom: rem-calc(30)!important;   
+}
+
+#IATS_PaymentBoxDiv button {
+    @include button;
+    background: #fff;
+    border: 1px solid $gold;
+    color: $gold;
+    
+    &:hover {
+        border-color: $light-gold;
+        color: $light-gold;  
+    }
+     
+}
+
+
+#IATS_PaymentBoxDiv label.IATS_RadioPaymentLabel {
+    border-color: #0000;
+    border-width: 0;
+    border: none;
+    display: inline;
+    clear: left;
+    float: none;
+    height: 13px;
+    line-height: 1.5em;
+    background-color: #0000;
+    vertical-align: middle;
+    padding-left: 10px;
+    margin-right: 10px;
+    //font-weight: 400;
+}
+
+#IATS_Payment_ExpiryDateDiv {
+    input, 
+    select {
+        width: 100px;  
+        margin-right: 10px; 
+    }
+}
+
+#IATS_Payment_CVV2Div {
+    input {
+        width: auto;   
+    }
+}
+
+div.IATS_AmountItemDiv, div.IATS_ProfileItemDiv, div.IATS_PaymentItemDiv, div.IATS_ResponseItemDiv {
+    display: block;
+    font-size: rem-calc(16);
+    width: auto;
+    overflow: visible;
+    overflow-x: visible;
+    padding: .2em 0 .2em 0;
+    margin: 0 0 rem-calc(12);
+    clear: both;
+}
+
+#IATS_PaymentBoxDiv label.IATS_RadioAmtLabel {
+    border-color: #0000;
+    border-width: 0;
+    border: none;
+    display: inline;
+    clear: left;
+    float: none;
+    height: 13px;
+    line-height: 1.5em;
+    margin: 0 0 rem-calc(12)!important;
+    background-color: #0000;
+    vertical-align: middle;
+}
+
+
+#IATS_PaymentBoxDiv .IATS_PaymentItemDiv .tcalInput {
+    padding: 12px 12px 13px 12px!important;
+}
