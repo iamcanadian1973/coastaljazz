@@ -1,0 +1,240 @@
+//
+// Footer
+// --------------------------------------------------
+ 	
+
+.footer-widgets {
+	
+    background: $dark-gray;
+    padding-top: 40px;
+    
+    .widget {
+        
+        margin-bottom: 40px;
+        
+        h4 {
+            color: #fff;
+            font-size: 24px;   
+            margin-bottom: 15px;
+        }
+        
+        p {
+            color: #fff;   
+            font-size: 14px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            
+            a {
+                color: #fff;   
+                
+                &:hover {
+                    color: $light-gold;   
+                }
+            }
+        }
+        
+        .logo {
+            padding-top: 10px;   
+        }
+        
+        .social-icons {
+         
+            i {
+                color: #fff;   
+            }
+            
+            a:hover i {
+                color: $light-gold;
+            }
+            
+        }
+        
+    }
+    
+    .widget-get-in-touch {
+     
+        @include breakpoint(large) {
+            padding: 0 15px 0 15px;
+        }
+        
+    }
+    
+    .widget-gravity-form {
+        .validation_error {
+            display: none;   
+        }
+        
+        .validation_message {
+            padding: 5px 0 0!important;  
+            font-weight: 400; 
+        }
+        
+        .gform_wrapper {
+            margin: 0;   
+        }
+        
+        .gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+            max-width: 100%!important;
+        }
+        
+        .widget-title {
+            margin-bottom: 10px;   
+        }
+        
+        .gform_confirmation_message {
+                color: #fff;
+                font-size: 14px;   
+            }
+        
+        form {
+            
+            display: flex;
+            width: 100%;
+            margin-bottom: 24px;
+            padding-bottom: 64px;
+            position: relative;
+            
+            > * {
+                width: auto; 
+                padding: 0;
+                margin: 0;
+                clear: none;  
+            }
+            
+            .validation_message {
+                display: none!important;    
+            }
+            
+            
+            
+            .gform_body {
+                
+                flex-grow: 1;
+                 
+                .ginput_container {
+                    margin: 0;
+                    padding: 0;   
+                }
+                
+                .gfield {
+                    margin: 0;
+                    padding: 0;   
+                }
+                
+                .gfield_html {
+                    margin-top: 0!important;   
+                    padding: 16px 0 0 0;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                }
+                
+                .gfield_error {
+                    width: 100%;
+                    border: none!important;
+                 }
+                 
+                 
+                 
+                
+                input {
+                    width: 100%!important; 
+                    outline: none;
+                    height: 34px;
+                    border: none;
+                    margin: 0;
+                    padding: 0 10px!important;
+                    font-size: 14px;
+                    font-weight: 300;
+                }
+                
+                input[type="text"] {
+                    -webkit-appearance: none;
+                    border-radius: 0;
+                }
+            }
+            
+            .gform_validation_error .top_label input, 
+            .gform_validation_error .top_label select {
+                 
+                width: 100%!important;
+            }
+            
+            .gform_footer {
+                 
+                 padding-left: 20px;
+                 
+                 .gform_button {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    text-transform: uppercase;
+                    display: block;
+                    border: 1px solid $gold; 
+                    color: $gold; 
+                    font-size: 14px;
+                    padding: 8px 20px;
+                    line-height: inherit!important;
+                    min-height: inherit!important;
+                    @include letter-spacing(75);
+                    cursor: pointer;
+                    min-width: inherit;
+                    
+                    &:hover {
+                        background-color: $gold;   
+                        color: #fff;
+                    }
+                    
+                    @include breakpoint(small only) {
+                        padding: 8px;
+                    }
+                   
+                }
+            }
+        }
+        
+        p {
+            font-size: 14px;   
+        }
+    }
+    
+}
+
+
+.site-footer {
+	
+    background: $black;
+    padding: 20px 0;
+    
+    p, a {
+        color: #fff;
+        font-size: 12px;   
+    }
+    
+    a:hover {
+       color: $light-gold;   
+    }
+    
+     
+    .split {
+        display: block;   
+    }
+    
+    i {
+        display: none;
+        font-style: normal;   
+    }
+    
+    @include breakpoint(xlarge) {
+         
+        .split {
+            display: inline;   
+        }
+        
+        i {
+            display: inline;   
+        }
+    }
+    
+}

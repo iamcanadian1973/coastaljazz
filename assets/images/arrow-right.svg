@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="22px" viewBox="0 0 31 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Right Arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mockups" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sticky-Header" transform="translate(-1271.000000, -3248.000000)">
+            <g id="Group-2" transform="translate(122.000000, 2580.000000)">
+                <g id="Right-Arrow" transform="translate(1151.000000, 668.000000)">
+                    <g id="Right-Arrow---Hover">
+                        <path d="M16.4041042,21.6211929 C16.6665151,21.8692136 17.0259489,22 17.3712264,22 C17.7165039,22 18.0752473,21.8692136 18.3374855,21.6211929 L28.5994781,11.9162194 C28.8617164,11.6681986 29,11.3416408 29,11.001694 C29,10.6624004 28.8617164,10.3358425 28.5994781,10.0870054 L18.3374855,0.382195174 C17.79868,-0.127398391 16.9429097,-0.127398391 16.4041042,0.382195174 C15.8652986,0.891788739 15.8652986,1.70116243 16.4041042,2.210756 L25.6989745,11.001694 L16.4041042,19.792632 C15.879455,20.3022256 15.879455,21.1249882 16.4041042,21.6211929 Z" id="Fill-4" fill="#424242"></path>
+                        <path d="M25.6060606,11 L0.381631792,11" id="Line" stroke="#424242" stroke-width="3" stroke-linecap="square"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

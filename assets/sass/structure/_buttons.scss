@@ -1,0 +1,37 @@
+@mixin button {
+  display: inline-block;
+  min-width: 180px;
+  padding: 10px 8px 11px;
+  text-align: center;
+  font-size: 18px;
+  line-height: (28/18);
+  transition: ease all 0.3s;
+  @include letter-spacing(75);
+  text-transform: uppercase;
+  text-decoration: none!important;
+}
+
+.button {
+    @include button;
+    background: #fff;
+    border: 1px solid $gold;
+    color: $gold;
+    
+    &:hover {
+        border-color: $light-gold;
+        color: $light-gold;  
+    }
+ 
+    
+    &.secondary {
+        background: $gold; 
+        border: 1px solid $gold;
+        color: #fff;
+        
+        &:hover {
+            background: $light-gold; 
+            border-color: $light-gold;
+            color: #fff;
+        }   
+    }
+}

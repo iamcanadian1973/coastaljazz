@@ -1,0 +1,12 @@
+
+.site-content {
+	word-wrap: break-word;
+}
+
+.hide {
+	display: none;	
+}
+
+input[type="search"] {
+	 @include box-sizing(border-box);
+}

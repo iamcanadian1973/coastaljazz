@@ -1,0 +1,45 @@
+// Accordion
+
+.section-accordion {
+ 
+    .accordion {
+    }
+
+    .accordion-item {
+        
+        margin-bottom: 10px;
+        
+        .accordion-title {
+            background: $gray;
+            padding: 11px 40px 11px 20px;
+            position: relative;
+           
+            h4 {
+                 color: #fff;    
+                 margin: 0;
+            }
+            
+            &:after {
+               content: "\f196";   
+               font-family: 'FontAwesome';
+               position: absolute;
+               top: 50%;
+               right: 10px;
+               transform: translateY(-50%);
+               color: #fff;
+               font-size: 26px;
+            }
+            
+        }
+        
+         &.is-active .accordion-title:after {
+            content: "\f147";   
+        }
+    }
+    
+    
+    .accordion-content {
+         padding: 10px 20px 0;   
+    }
+    
+}

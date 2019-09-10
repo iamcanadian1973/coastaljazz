@@ -1,0 +1,235 @@
+
+
+.single-tribe_venue {
+    
+  .tribe-events-venue .row {
+    margin-bottom: 40px;   
+  }
+  
+  .venue-address, 
+  .tribe-events-gmap {
+      
+            
+        p,
+        span {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: $paragraph-line-height;
+            @include letter-spacing(25); 
+            font-style: normal;
+        }
+  }
+  
+  .venue-address {
+      margin-bottom: 22px;
+  }
+  
+  .venue-details {
+      
+      margin-bottom: 80px!important;
+      
+      a {
+        text-decoration: none;   
+      }
+
+      
+      @include breakpoint(large) {
+        
+        .columns:first-child {
+                padding-left: rem-calc( map-get( $grid-column-gutter, medium ) + $global-padding );   
+        }
+        .columns:last-child {
+                padding-left: rem-calc( map-get( $grid-column-gutter, medium ) /2 );
+                padding-right: rem-calc( map-get( $grid-column-gutter, medium ) + $global-padding );  
+        }
+        
+    }
+      
+  }
+
+  .event-details {
+
+	.event-meta > * {
+	  margin-bottom: 20px;
+	}
+
+	h5 {
+	  font-size: 14px;
+	  font-weight: 700;
+	  text-transform: uppercase;
+	  margin-bottom: 20px;
+	  @include letter-spacing(75);
+
+	  a {
+		color: $dark-gray;
+
+		&:hover {
+		  color: $gray;
+		}
+	  }
+	}
+
+	.event-venue {
+	  font-size: 14px;
+	  display: block;
+	  margin-bottom: 10px;
+	}
+
+	.event-time {
+	  font-size: 14px;
+	  display: block;
+	  margin-bottom: 10px;
+	}
+
+	.event-price {
+	  font-size: 14px;
+	  text-transform: capitalize;
+	  display: block;
+	  margin-bottom: 10px;
+	}
+
+	.button {
+	  font-size: 16px;
+	  margin-bottom: 20px;
+
+	  &:first-of-type {
+		margin-right: 20px;
+	  }
+	}
+
+	@include breakpoint(medium) {
+	  /* We first create a flex layout context */
+	  display: flex;
+
+	  /* Then we define the flow direction
+	   and if we allow the items to wrap
+	  * Remember this is the same as:
+	  * flex-direction: row;
+	  * flex-wrap: wrap;
+	  */
+	  //flex-flow: row wrap;
+
+	  /* Then we define how is distributed the remaining space */
+	  justify-content: space-between;
+
+	  align-items: center;
+
+	  .event-meta {
+		flex: 1 1 auto;
+
+		div {
+		  display: flex;
+		  flex-flow: row wrap;
+		  //justify-content: space-between;
+		  align-items: center;
+
+		  h5 {
+			width: 100%;
+
+		  }
+
+		  > * {
+			padding-right: 20px;
+		  }
+		}
+
+	  }
+
+	  .event-buttons {
+		flex: 0 0 200px;
+		text-align: right;
+
+		.button {
+
+		  &:first-of-type {
+			margin-right: 0;
+		  }
+		}
+	  }
+
+	}
+
+	@include breakpoint(large) {
+	  /* We first create a flex layout context */
+	  display: flex;
+
+	  /* Then we define the flow direction
+	   and if we allow the items to wrap
+	  * Remember this is the same as:
+	  * flex-direction: row;
+	  * flex-wrap: wrap;
+	  */
+	  //flex-flow: row wrap;
+
+	  /* Then we define how is distributed the remaining space */
+	  justify-content: space-between;
+
+	  align-items: center;
+
+	  .event-meta {
+		flex: 1 1 auto;
+
+		div {
+		  display: flex;
+		  flex-flow: row wrap;
+		  justify-content: space-between;
+		  align-items: center;
+
+		  > * {
+			margin-bottom: 0;
+			padding-right: 0 !important;
+		  }
+		}
+
+		h5 {
+		  width: 35% !important;
+		}
+
+		.event-venue {
+		  width: 25%;
+		}
+
+		.event-time {
+		  width: 60px;
+		}
+
+		.event-price {
+		  width: 70px;
+		}
+	  }
+
+	  .event-buttons {
+		flex: 0 0 400px;
+
+		.button {
+
+		  &:last-of-type {
+			margin-left: 20px;
+		  }
+		}
+
+	  }
+
+	}
+
+  }
+  
+  
+  
+  
+  .tribe-events-loop {
+        max-width: 100%!important;   
+  }
+  
+  .type-tribe_events {
+      border-bottom: 1px solid $light-gray;
+      margin-bottom: 26px;
+      padding-bottom: 6px;
+    
+      &:first-of-type {
+        margin-top: 0;
+      }
+  }
+
+}
+

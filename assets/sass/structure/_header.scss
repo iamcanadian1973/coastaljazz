@@ -1,0 +1,134 @@
+/*
+Header
+---------------------------------------------- */
+
+
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #fff;
+    z-index: 999;
+    min-height: 67px;
+    
+    border-bottom: 1px solid $light-gray;
+    
+    @include breakpoint(large down) {        
+        .site-branding {
+            padding-left: map-get($grid-column-gutter, small)/2;
+        }
+    }
+
+    .logged-in & {
+         
+        top: 46px;
+        
+        @media screen and (min-width: 783px) {
+            top: 32px;
+        }        
+    }
+    
+    .large-4 {
+        padding-right: 0;   
+    }
+    
+    .dropdown-pane {
+        border: none;
+        text-align: right;
+        padding: 13px 20px;
+        height: 65px;
+        
+        @include breakpoint(large) {
+            width: 400px;
+        }
+        
+        .search-field {
+            padding: 10px;
+            border: 1px solid $light-gray; 
+            
+            &:focus {
+                outline: none;   
+            }
+        }
+           
+    }
+    
+    
+    .site-branding {
+        padding: 12px 30px 18px 10px;  
+        float: left;
+        
+        @include breakpoint(xlarge) {
+            float: left;
+        }
+    }
+        
+
+    .fa {
+        font-size: 24px;
+        color: #000;
+    }
+    
+    .fa-search {
+        font-size: 24px;
+        color: #000;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        
+        @include breakpoint(xlarge) {
+            right: 0;
+        }
+        
+    }
+    
+    .search {
+        width: 61px;
+        height: 66px;
+        display: block;
+        border-left: 1px solid $light-gray;
+        position: relative;
+        
+        @include breakpoint(xlarge) {
+            //right: rem-calc( ( map-get( $grid-column-gutter, medium ) / 2 ) * -1 );  
+        }
+        
+    }
+    
+    
+    .button,
+    .social-icons,
+    .search {
+        float: right;  
+        margin-left: 24px;
+        position: relative;
+    }
+    
+    .button {
+        top: 8px;   
+    }
+    
+    .social-icons {
+        display: none;
+        top: 20px;   
+        
+        @include breakpoint(xlarge) {
+            display: block;
+        }
+        
+        a:hover .fa {
+            color: $gold;   
+        }
+    }
+    
+    .search {
+        margin-left: 10px;  
+        
+        &:hover .fa {
+            color: $gold;   
+        }
+    }
+
+}

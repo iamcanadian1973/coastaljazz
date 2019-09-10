@@ -1,0 +1,29 @@
+/* CSS Document */
+
+.template-partners .section-wysiwyg-1 {
+    
+    margin-bottom: 60px;
+    
+    h3 {
+        position: relative;
+        margin-bottom: 15px;
+        
+        &:after {
+            content: '';
+            display: block;
+            background-color: $gold;
+            width: 75px;  
+            height: 1px;
+            margin: 15px 0 0;       
+        }
+    }
+    
+    p {
+        text-transform: uppercase;   
+    }
+ 
+    hr.bottom {
+        display: none;      
+    }
+    
+}

@@ -1,0 +1,156 @@
+// Search Results
+
+
+.search {
+    
+    .page-header h2 {
+        margin-bottom: 44px;
+        
+        &:after {
+            content: '';
+            display: block;
+            background-color: $gold;
+            width: 260px;  
+            height: 1px;
+            margin: 15px 0 0;       
+        }
+    }
+
+    .hentry,
+    .no-results {
+        margin-bottom: 44px;
+        
+        h4 {
+            margin-bottom: 5px;   
+        }
+        
+        .entry-summary {
+            margin-bottom: 15px;   
+        }
+        
+        .more {
+            font-size: 16px;
+            font-weight: normal;   
+            text-transform: uppercase;   
+        }
+    }
+    
+    
+    .entry-meta {
+        
+        padding-bottom: 10px;
+        
+        h4,
+        h5,
+        h6 {
+          @include letter-spacing(100); 
+          text-transform: uppercase;  
+          line-height: 30px;
+          margin-bottom: 5px;
+        }
+        
+
+        h6 {
+            color: $gold;   
+            font-family: "nimbus-sans",sans-serif;
+        }
+        
+        
+        p {
+            font-weight: 300;
+            font-size: 14px;
+            @include letter-spacing(100); 
+            text-transform: uppercase;   
+        }
+        
+        .event-date {
+            display: block;
+        }
+        
+        .event-venue {
+            display: block;
+        }
+        
+        .event-time-price {
+            display: block;
+            
+            .event-price {
+                position: relative;
+                
+                &:before {
+                  content: '';
+                  width: 1px;
+                  height: 14px;
+                  margin: 0 10px;
+                  background: $dark-gray;
+                  display: inline-block;
+                  position: relative;
+                  top: 2px;
+                }
+            }
+        }
+        
+        
+        .post-categories {
+        
+            position: relative;
+                    
+            &:before {
+              content: '';
+              width: 1px;
+              height: 14px;
+              margin: 0 10px;
+              background: $dark-gray;
+              display: inline-block;
+              position: relative;
+              top: 2px;
+            }
+            
+            a {
+                color: $dark-gray;  
+                margin-right: 10px;  
+                
+                &:hover {
+                    color: $gray;   
+                }
+            }
+        }   
+    }
+    
+    
+    .nav-links {
+            
+        @include breakpoint(large) {
+            margin: 0 -15px;
+        }
+        
+        > div {
+            margin-bottom: $global-margin;
+            
+            a {
+                @include button;
+                background: #fff;
+                border: 1px solid $gold;
+                color: $gold;
+                
+                &:hover {
+                    border-color: $light-gold;
+                    color: $light-gold;  
+                }   
+            }
+            
+            @include breakpoint(medium) {
+                display: inline-block;
+                width: 50%;
+                padding: 15px;
+                
+                &.nav-previous {
+                    text-align: right;  
+                    float: right; 
+                }
+            }
+          
+        }
+     } 
+    
+}

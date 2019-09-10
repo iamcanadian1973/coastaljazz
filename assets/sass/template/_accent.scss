@@ -1,0 +1,218 @@
+$accent-primary: #0081c7; 
+$accent-primary-hover: scale-color($accent-primary, $lightness: 20%);
+
+.accent a {
+    color: $accent-primary;
+}
+.accent a:focus {
+    color: $accent-primary-hover;
+}
+.accent a:hover { 
+    color: $accent-primary-hover;
+}
+
+.accent hr {
+    border-color: $accent-primary;
+}
+
+.accent blockquote p {
+    color: $accent-primary;
+}
+
+/* Frontpage */
+
+.accent .instagram .fa-instagram {
+    color: $accent-primary;
+}
+
+.accent .section .view-all:hover .fa {
+    color: $accent-primary-hover;
+}
+
+.accent .blog-posts h4:after {
+    background: $accent-primary;
+}
+
+.blog article.type-post h4:after {
+    background: $accent-primary;
+}
+
+/* Primary */
+
+.accent .nav-primary .menu .menu-item-has-children:active>a, 
+.accent .nav-primary .menu .menu-item-has-children:focus>a, 
+.accent .nav-primary .menu .menu-item-has-children:hover>a {
+    color: $accent-primary;
+}
+
+.accent .nav-primary .menu .menu-item-has-children:active .sub-menu-toggle:after, 
+.accent .nav-primary .menu .menu-item-has-children:focus .sub-menu-toggle:after, 
+.accent .nav-primary .menu .menu-item-has-children:hover .sub-menu-toggle:after {
+    border-color: $accent-primary;
+}
+
+.accent .nav-primary .menu .menu-item a:hover {
+    color: $accent-primary;
+}
+
+@media screen and (min-width: 64em) {
+    .accent .nav-primary .menu>.menu-item.current-category-ancestor>a, 
+    .accent .nav-primary .menu>.menu-item.current-menu-ancestor>a, 
+    .accent .nav-primary .menu>.menu-item.current-menu-item>a, 
+    .accent .nav-primary .menu>.menu-item.current-page-ancestor>a, 
+    .accent .nav-primary .menu>.menu-item.current_page_parent>a, 
+    .accent .nav-primary .menu>.menu-item:active>a, .nav-primary .menu>.menu-item:focus>a, 
+    .accent .nav-primary .menu>.menu-item:hover>a {
+        color: $accent-primary;
+    }
+}
+
+/* Header */
+
+.accent .site-header .social-icons a:hover .fa,
+.site-header .search:hover .fa {
+    color: $accent-primary;
+}
+
+.entry-content h2:after {
+    background-color: $accent-primary;
+}
+
+
+/* Buttons */
+
+.accent .button {
+    border-color: $accent-primary;
+    color: $accent-primary;
+}
+.accent .button:hover {
+    border-color: $accent-primary-hover;
+    color: $accent-primary-hover;
+}
+
+.accent .button.secondary {
+    background: $accent-primary;
+    border: 1px solid $accent-primary;
+    color: #fff;
+}
+
+.accent .button.secondary:hover {
+    background: $accent-primary-hover;
+    border: 1px solid $accent-primary-hover;
+    color: #fff;
+}
+
+
+/* Footer */
+
+.accent  
+.footer-widgets .widget .social-icons a:hover i {
+    color: $accent-primary-hover;
+}
+
+.accent .gform_wrapper .gform_footer input, 
+.accent .gform_wrapper .gform_page_footer input {
+    background: $accent-primary!important;
+    border: 1px solid $accent-primary!important;
+}
+
+.accent .gform_wrapper .gform_footer input:hover, 
+.accent .gform_wrapper .gform_page_footer input:hover {
+    background: $accent-primary-hover!important;
+    border: 1px solid $accent-primary-hover!important;
+}
+
+.accent .site-footer a {
+    color: #fff;
+}
+
+/* Secondary Nav */
+
+@media screen and (min-width: 64em) {
+    
+    .accent .nav-secondary .menu .menu-item.current-category-ancestor>a, 
+    .accent .nav-secondary .menu .menu-item.current-menu-ancestor>a, 
+    .accent .nav-secondary .menu .menu-item.current-menu-item>a, 
+    .accent .nav-secondary .menu .menu-item.current-menu-parent>a, 
+    .accent .nav-secondary .menu .menu-item.current-page-ancestor>a, 
+    .accent .nav-secondary .menu .menu-item.current_page_parent>a, 
+    .accent .nav-secondary .menu .menu-item:hover>a {
+        color: $accent-primary;
+    }
+
+    .accent .nav-secondary .menu .menu-item.current-category-ancestor, 
+    .accent .nav-secondary .menu .menu-item.current-menu-ancestor, 
+    .accent .nav-secondary .menu .menu-item.current-menu-item, 
+    .accent .nav-secondary .menu .menu-item.current-menu-parent, 
+    .accent .nav-secondary .menu .menu-item.current-page-ancestor, 
+    .accent .nav-secondary .menu .menu-item.current_page_parent, 
+    .accent .nav-secondary .menu .menu-item:hover {
+        border-bottom: 1px solid $accent-primary;
+    }
+
+}
+
+
+/* Widgets */
+
+.accent .widget-area .widget_subpages ul a {
+    color: $accent-primary;
+    border: 1px solid $accent-primary;
+}
+
+.accent .widget-area .widget_subpages ul li.widget_subpages_current_page a {
+    color: $accent-primary-hover!important;
+    border-color: $accent-primary-hover!important;
+}
+
+/* Events */
+
+.accent .tribe-events-button, body #tribe-events .tribe-events-button {
+    background: $accent-primary!important;
+}
+
+.accent .post-type-archive-tribe_events .tribe-events-sub-nav a {
+    background: #fff;
+    border: 1px solid $accent-primary;
+    color: $accent-primary;
+}
+
+.accent.post-type-archive-tribe_events .tribe-grid>h4 {
+    border-bottom: 1px solid $accent-primary!important;
+}
+
+.accent .tribe-events-button:hover, 
+.accent #tribe-events .tribe-events-button:hover {
+    background: $accent-primary-hover!important;
+}
+
+
+/* Blog */
+
+@media screen and (min-width: 64em) {
+   .accent.single-post .nav-secondary .menu .menu-item:hover {
+        border-bottom: 1px solid $accent-primary!important;
+    }
+    
+    .accent.single-post .nav-secondary .menu .menu-item:hover a {
+        color: $accent-primary!important;
+    }
+}
+
+.accent.single-post .entry-header h2:after {
+    background-color: $accent-primary;
+}
+
+
+/* Past Programming */
+
+.accent .section-past-programming .column h5:after, .section-past-programming .columns h5:after {
+    background: $accent-primary;
+}
+
+/* Press */
+
+.accent .section-press-releases .footable-wrapper .footable {
+    width: 100%;
+    border-top: 1px solid $accent-primary;
+}

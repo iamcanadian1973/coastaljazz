@@ -1,0 +1,29 @@
+// Section
+
+.section {
+    
+    position: relative;
+    margin-bottom: 45px;
+    
+    &.no-horizontal-rule {
+        hr.bottom {
+            display: none;   
+        }
+    }
+    
+    &.no-margin-bottom,
+    &.after-hero {
+        margin-bottom: 0;   
+    }
+    
+    
+    &:last-child {
+     
+        hr.bottom {
+            display: none;   
+        }
+        
+    }
+    
+    
+}

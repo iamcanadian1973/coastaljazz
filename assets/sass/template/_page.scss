@@ -1,0 +1,121 @@
+html, body {
+	height: 100%;
+	background: #000;
+}
+
+button {
+    cursor: pointer;
+        
+    &:focus {
+        outline: none;   
+    }   
+}
+
+.site-container {
+    padding-top: 67px;   
+}
+
+
+.fa-small {
+    font-size: 11px;
+    position: relative;
+    top: -1px;
+}
+
+.title-bar {
+    padding: 0;   
+}
+
+.site-content {
+	background: #fff;
+    
+    //.content-area,
+    .widget-area {
+        padding-bottom: 44px;
+    }
+    
+    .site-main {
+        padding-top: 44px;
+    }
+      
+    .widget-area {
+        @include breakpoint(large) {
+            padding-top: 44px;
+        }
+    }
+    
+    @include breakpoint(large) {
+        
+        .large-4 {
+            .widget-area {
+                padding-left: $global-padding + 15px;   
+            }
+            
+            &.large-pull-8 {
+                .widget-area {
+                    padding-left: 0;
+                    padding-right: $global-padding + 15px;   
+                }
+            }
+        }
+        
+    }
+
+}
+
+.page-builder {
+    .site-main {
+        padding-top: 0;
+        
+        section:first-child {
+            margin-top: 44px;
+            
+            &.section-hero {
+                margin-top: 0!important;   
+            }
+        }
+    }
+}
+
+
+hr {
+    border-color: $gold;
+    width: 260px;  
+    margin: 45px 0 45px;    
+}
+
+p + hr {
+    margin-top: 30px;
+}
+
+
+hr.bottom {
+    width: 260px;  
+    margin: 45px 0 0;    
+}
+
+
+@mixin heading-bottom-border {
+    position: relative;
+         
+    &:after {
+        content: '';
+        display: block;
+        //position: absolute;   
+        width: 50px;
+        height: 1px;
+        background: $gold;
+        margin: 15px 0 20px;
+    }   
+}
+
+
+.after-hero {
+    background: $dark-gray;
+     
+    @include breakpoint(xlarge) {
+        background: $light-gray;
+    }
+    
+    
+}

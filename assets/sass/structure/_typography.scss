@@ -1,0 +1,228 @@
+// Typography
+
+/* Typography resets */
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; 
+}
+
+body {
+	font-family: $paragraph-font-family;
+	font-style: $paragraph-font-style;
+	font-weight: $paragraph-font-weight;
+	font-size: $paragraph-font-size;  
+	color: $paragraph-font-color;
+	-webkit-font-smoothing: antialiased;
+}
+
+abbr[title] {
+    text-decoration: none!important;   
+}
+
+a {
+	text-decoration: none;
+}
+
+
+// Links
+a {
+ 	outline: none!important;	
+	
+	transition: background 200ms linear, color 200ms linear;
+    
+    * {
+        transition: background 200ms linear, color 200ms linear;   
+    }
+	
+	&:focus {
+		outline: none!important;	
+	}
+
+	&:visited {
+		//color: inherit;
+	} // &:visited
+
+} // a
+
+
+
+a[href^="tel"]:link,
+a[href^="tel"]:visited, 
+a[href^="tel"]:hover {
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+}
+
+// Adjust based on theme
+@include breakpoint(xlarge down) {
+    a[href^="tel"]:link,
+    a[href^="tel"]:visited,
+    a[href^="tel"]:hover {
+        text-decoration: none;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+}
+
+
+strong {
+	font-weight: 700;	
+}
+		
+/* Headings
+--------------------------------------------- */	
+		
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $header-color;
+    line-height: 1.2;
+    text-transform: uppercase;
+   	
+	a {
+		color: $anchor-color;	
+	}	
+}
+
+
+
+// Heading Line Heights
+
+ h1, 
+.h1 {
+	@include letter-spacing(100);
+}
+
+h2,
+.h2 {
+    @include letter-spacing(100);
+    line-height: (48/44);
+}
+
+h3,
+.h3 {
+   @include letter-spacing(100); 
+   line-height: 1;
+   margin-bottom: 33px;
+}
+
+h4,
+.h4 {
+   @include letter-spacing(75); 
+   margin-bottom: 20px;
+}
+
+h5,
+.h5 {
+   @include letter-spacing(75); 
+   margin-bottom: 20px;
+}
+
+
+blockquote {
+    border: none;
+    color: $gold;
+    
+    p {
+        color: $gold;   
+        
+        padding: 20px 45px;
+    
+        @include breakpoint(large) {
+            padding: 40px 90px;
+        }
+    }
+    
+    
+    
+    position: relative;
+    margin-bottom: 40px;
+    
+    
+    
+}
+
+
+// entry content
+
+ .entry-content {
+     
+    h2 {
+        position: relative;
+        margin-bottom: 30px;
+        
+        &:after {
+            content: '';
+            display: block;
+            background-color: $gold;
+            width: 260px;  
+            height: 1px;
+            margin: 15px 0 0;       
+        }
+        
+        &:first-child {
+            margin-top: -10px;   
+        }
+    }
+ 
+	a {
+		color: $anchor-color;
+		text-decoration: none;
+		text-decoration: underline;
+			
+		&:hover {
+			color: $anchor-color-hover;
+			text-decoration: none;
+		}
+	}
+	
+	p, li {
+        font-weight: 300;
+		line-height: $paragraph-line-height;
+		@include letter-spacing(25); 
+	}
+	
+	p, ul {
+		margin-bottom: $paragraph-margin-bottom;	
+	}
+    
+    p:last-child {
+        margin-bottom: 0;   
+    }
+    
+    ul, 
+    ol {
+        @include list-reset;   
+    }
+    
+    ul.no-style,
+	ol.no-style {
+        @include list-reset; 
+        list-style-type: none;
+    }
+	
+	ul:not([class]),
+	ol:not([class]) {
+		
+		margin: 0 0 30px 32px;
+		list-style-position: outside;
+		
+		li:not([class]) {
+			padding: 0 0 5px 0;
+			margin-bottom: 0;
+		}
+	}
+	
+	ul:not([class]) li {
+        list-style-type: disc;
+    }
+    
+    ol:not([class]) li {
+        list-style-type: decimal;
+    }
+ 	
+}

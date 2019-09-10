@@ -1,0 +1,17 @@
+/* CSS Document */
+
+.section-board-staff {
+    
+    .wrap hr {
+        display: block!important;   
+    }
+    
+    .wrap hr:last-child {
+        display: none!important;   
+    }
+    
+    hr.bottom {
+        margin: 24px 0 48px;       
+    }
+    
+}

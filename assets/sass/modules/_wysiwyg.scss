@@ -1,0 +1,17 @@
+// WYSIWYG
+
+.section-wysiwyg {
+ 
+    @include breakpoint(large) {
+        
+        .entry-content .columns:last-child {
+                padding-left: rem-calc( map-get( $grid-column-gutter, medium ) + $global-padding );   
+        }
+        .entry-content .columns:first-child {
+                padding-left: rem-calc( map-get( $grid-column-gutter, medium ) /2 );
+                padding-right: rem-calc( map-get( $grid-column-gutter, medium ) + $global-padding );  
+        }
+        
+    }
+    
+}
