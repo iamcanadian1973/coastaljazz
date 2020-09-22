@@ -72,9 +72,17 @@ $thumbnail = sprintf( '<div class="event-thumbnail"><span class="event-date%s">%
             $button = '';
             $event_cta_button_text = get_field( 'event_cta_button_text' );
             $event_cta_button_link = get_field( 'event_cta_button_link' );
-            if( !empty( $event_cta_button_text ) && !empty( $event_cta_button_link ) ) {
-                $button = sprintf( '<p><a href="%s" class="button secondary">%s</a></p>', $event_cta_button_link, $event_cta_button_text );
+            
+            $event_id = get_field( 'event_brite_id' );
+
+            if( ! empty( $event_id ) && !empty( $event_cta_button_text ) ) {
+                $button = event_brite_button( $event_cta_button_text, $event_id );
+            } else {
+                if( !empty( $event_cta_button_text ) && !empty( $event_cta_button_link ) ) {
+                    $button = sprintf( '<a href="%s" class="button secondary" rel="bookmark">%s</a>', $event_cta_button_link, $event_cta_button_text );
+                }
             }
+
             ?>
         
             <!-- Event header -->

@@ -317,8 +317,9 @@
               top: 2px;
             }
             
-            i {
-                margin: 0 0 0 5px;  
+            i,
+            button {
+                margin: 0 0 0 15px;  
                 vertical-align: middle; 
                 
                 &:first-child {

@@ -24,6 +24,7 @@
 <meta name="theme-color" content="#ffffff">
 <script src="https://use.typekit.net/blz1omv.js"></script>
 <script>try{Typekit.load({ async: false });}catch(e){}</script>
+<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 <?php wp_head(); ?>
 </head>
 

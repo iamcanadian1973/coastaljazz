@@ -38,8 +38,14 @@ $cta_button_link = get_field( 'event_cta_button_link' );
 $buttons = sprintf( '<a href="%s" class="url button primary">%s</a>', 
            $permalink, esc_html__( 'More info', 'the-events-calendar' ) );
 
-if( !empty( $cta_button_text ) && !empty( $cta_button_link ) ) {
-    $buttons .= sprintf( '<a href="%s" class="button secondary">%s</a>', $cta_button_link, $cta_button_text );
+$event_id = get_field( 'event_brite_id', $event );
+
+if( ! empty( $event_id ) && !empty( $cta_button_text ) ) {
+    $buttons .= event_brite_button( $cta_button_text, $event_id );
+} else {
+    if( !empty( $cta_button_text ) && !empty( $cta_button_link ) ) {
+        $buttons .= sprintf( '<a href="%s" class="button secondary" rel="bookmark">%s</a>', $cta_button_link, $cta_button_text );
+    }
 }
 
 ?>

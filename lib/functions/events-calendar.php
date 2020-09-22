@@ -56,11 +56,19 @@ function get_upcoming_events() {
     $posts = [];
     
     $events = tribe_get_events( array(
-       'eventDisplay' => 'list',
-       'posts_per_page' => 10,
-       //'tribe_events_cat' => 'pain-management' 
+           //'eventDisplay' => 'list',
+           'posts_per_page' => 10,           
+           'meta_query'     => array(
+                array(
+                'key' => 'exclude_from_home',
+                'compare' => 'NOT EXISTS'
+                )
+            )
        ) 
     );
+    
+    
+    // exclude_from_home
         
     // The result set may be empty
     if ( empty( $events ) ) {
@@ -104,7 +112,7 @@ function get_featured_events( $slick = false ) {
     */
     
     $args  = array(
-       'eventDisplay' => 'list',
+       //'eventDisplay' => 'list',
        'posts_per_page' => 12,
        // 'start_date'     => date( 'Y-m-d H:i:s', strtotime( '+1 day' ) ), // don't show today
        'start_date'     => date( 'Y-m-d H:i:s', strtotime( '-2 days' ) ),
@@ -157,7 +165,7 @@ function get_related_events( $post_ids ) {
     $posts = [];
         
     $args  = array(
-       'eventDisplay' => 'list',
+       //'eventDisplay' => 'list',
        'posts_per_page' => 100 );
     
     //$args['orderby'] = 'post__in';
@@ -278,6 +286,8 @@ function get_single_event( $event ) {
 
 
 function get_event_icons( $event, $show_empty = false ) {
+        
+    $event_id = is_null( $event ) ? get_the_ID() : $event->ID ;
     
     $icons = '';
     
@@ -291,7 +301,19 @@ function get_event_icons( $event, $show_empty = false ) {
     if( ! empty( $youtube ) ) {
         $icons .= '<i class="fa fa-youtube" aria-hidden="true"></i>'; 
     }
-        
+            
+    // Share icons
+    
+    $calendar_links = '<a href="' . Tribe__Events__Main::instance()->esc_gcal_url( tribe_get_gcal_link() ) . '" title="' . esc_attr__( 'Add to Google Calendar', 'the-events-calendar' ) . '">+ ' . esc_html__( 'Google Calendar', 'the-events-calendar' ) . '</a>';
+    $calendar_links .= '<a href="' . esc_url( tribe_get_single_ical_link() ) . '" title="' . esc_attr__( 'Download .ics file', 'the-events-calendar' ) . '" >+ ' . esc_html__( 'iCal Export', 'the-events-calendar' ) . '</a>';
+    
+    $icons .= sprintf( '<button type="button" data-toggle="event-%s"><i class="fa fa-calendar-plus" aria-hidden="true"></i></button>
+<div class="dropdown-pane top add-to-calendar" id="event-%s" data-dropdown data-hover="true" data-hover-pane="true">%s</div>', 
+                   $event_id,
+                   $event_id,
+                   $calendar_links
+              );
+    
     $icons = sprintf( '<span class="event-icons">%s</span>', $icons );
     
     if( empty( $icons ) && false == $show_empty ) {
@@ -299,6 +321,36 @@ function get_event_icons( $event, $show_empty = false ) {
     }
     
     return $icons;   
+}
+
+
+function event_brite_button( $text, $event_id = false ) {
+    
+    if( empty( $event_id ) || empty( $text ) ) {
+        return false;
+    }
+    
+    ob_start();
+    ?>
+    <!-- Noscript content for added SEO -->
+    <noscript><a href="https://www.eventbrite.ca/e/<?php echo $event_id;?>" class="button secondary" rel="noopener noreferrer" target="_blank"></noscript>
+    <!-- You can customize this button any way you like -->
+    <button class="button secondary" id="eventbrite-widget-modal-trigger-<?php echo $event_id;?>" type="button"><?php echo $text;?></button>
+    <noscript></a></noscript>
+    
+    <script type="text/javascript">
+        window.EBWidgets.createWidget({
+            widgetType: 'checkout',
+            eventId: '<?php echo $event_id;?>',
+            modal: true,
+            modalTriggerElementId: 'eventbrite-widget-modal-trigger-<?php echo $event_id;?>'
+        });
+    </script>    
+    <?php
+    $output = ob_get_contents();
+    ob_end_clean();
+    return $output;
+
 }
 
 
