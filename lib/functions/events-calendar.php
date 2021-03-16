@@ -55,17 +55,22 @@ function get_upcoming_events() {
 
     $posts = [];
     
-    $events = tribe_get_events( array(
-           //'eventDisplay' => 'list',
+    $args = array(
+           // 'eventDisplay' => 'custom',
+           'start_date'     => 'now',
            'posts_per_page' => 10,           
            'meta_query'     => array(
                 array(
                 'key' => 'exclude_from_home',
-                'compare' => 'NOT EXISTS'
+                'type' => 'BOOLEAN',
+                'value' => 0
                 )
             )
-       ) 
-    );
+       );
+    
+    $events = tribe_get_events( $args );
+    
+    var_dump( $args );
     
     
     // exclude_from_home
