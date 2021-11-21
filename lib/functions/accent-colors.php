@@ -56,59 +56,59 @@ function accent_colors() {
         $out = "
             
             .accent hr {
-                border-color: $primary_accent;
+                border-color: $primary_accent!important;
             }
             
             .accent blockquote p {
-                color: $primary_accent;
+                color: $primary_accent!important;
             }
             
             .accent .footer-widgets .widget .social-icons a:hover i {
-                color: $primary_accent_hover;
+                color: $primary_accent_hover!important;
             }
             
             .accent .blog-posts h4:after {
-                background: $primary_accent;
+                background: $primary_accent!important;
             }
             
             .blog article.type-post h4:after {
-                background: $primary_accent;
+                background: $primary_accent!important;
             }
             
             
             .accent .site-header .social-icons a:hover .fa,
             .site-header .search:hover .fa {
-                color: $primary_accent;
+                color: $primary_accent!important;
             }
             
             .entry-content h2:after {
-                background-color: $primary_accent;
+                background-color: $primary_accent!important;
             }
             
             
             .accent.single-tribe_events .entry-content #single-tribe-events-header h6 {
-                color: $primary_accent;
+                color: $primary_accent!important;
             }
             
             .accent.home .featured-events .event-details h6, .home .upcoming-shows .event-details h6 {
-                color: $primary_accent;
+                color: $primary_accent!important;
             } 
             
             
             .accent .nav-primary .menu .menu-item-has-children:active>a, 
             .accent .nav-primary .menu .menu-item-has-children:focus>a, 
             .accent .nav-primary .menu .menu-item-has-children:hover>a {
-                color: $primary_accent;
+                color: $primary_accent!important;
             }
             
             .accent .nav-primary .menu .menu-item-has-children:active .sub-menu-toggle:after, 
             .accent .nav-primary .menu .menu-item-has-children:focus .sub-menu-toggle:after, 
             .accent .nav-primary .menu .menu-item-has-children:hover .sub-menu-toggle:after {
-                border-color: $primary_accent;
+                border-color: $primary_accent!important;
             }
             
             .accent .nav-primary .menu .menu-item a:hover {
-                color: $primary_accent;
+                color: $primary_accent!important;
             }
             
             @media screen and (min-width: 64em) {
@@ -119,7 +119,7 @@ function accent_colors() {
                 .accent .nav-primary .menu>.menu-item.current_page_parent>a, 
                 .accent .nav-primary .menu>.menu-item:active>a, .nav-primary .menu>.menu-item:focus>a, 
                 .accent .nav-primary .menu>.menu-item:hover>a {
-                    color: $primary_accent;
+                    color: $primary_accent!important;
                 }
             }
             
@@ -133,7 +133,7 @@ function accent_colors() {
                 .accent .nav-secondary .menu .menu-item.current-page-ancestor>a, 
                 .accent .nav-secondary .menu .menu-item.current_page_parent>a, 
                 .accent .nav-secondary .menu .menu-item:hover>a {
-                    color: $primary_accent;
+                    color: $primary_accent!important;
                 }
             
                 .accent .nav-secondary .menu .menu-item.current-category-ancestor, 
@@ -143,7 +143,7 @@ function accent_colors() {
                 .accent .nav-secondary .menu .menu-item.current-page-ancestor, 
                 .accent .nav-secondary .menu .menu-item.current_page_parent, 
                 .accent .nav-secondary .menu .menu-item:hover {
-                    border-bottom: 1px solid $primary_accent;
+                    border-bottom: 1px solid $primary_accent!important;
                 }
             
             }
@@ -151,8 +151,8 @@ function accent_colors() {
             
             
             .accent .widget-area .widget_subpages ul a {
-                color: $primary_accent;
-                border: 1px solid $primary_accent;
+                color: $primary_accent!important;
+                border: 1px solid $primary_accent!important;
             }
             
             .accent .widget-area .widget_subpages ul li.widget_subpages_current_page a {
@@ -164,9 +164,9 @@ function accent_colors() {
             
             
             .accent .post-type-archive-tribe_events .tribe-events-sub-nav a {
-                background: #fff;
-                border: 1px solid $primary_accent;
-                color: $primary_accent;
+                background: #fff!important;
+                border: 1px solid $primary_accent!important;
+                color: $primary_accent!important;
             }
             
             .accent.post-type-archive-tribe_events .tribe-grid>h4 {
@@ -226,6 +226,9 @@ function accent_colors() {
             .accent a:focus {
                 color: $text_links_hover;
             }
+            .accent a:visited {
+                color: $text_links_hover;
+            }
             .accent a:hover { 
                 color: $text_links_hover;
             }
@@ -235,6 +238,21 @@ function accent_colors() {
             }
             
             .accent .section .view-all:hover .fa {
+                color: $text_links_hover;
+            }
+
+            .tribe-events-button:focus, 
+            .tribe-events-button:hover, 
+            body #tribe-events .tribe-events-button:focus, 
+            body #tribe-events .tribe-events-button:hover {
+                background: $text_links_hover!important;
+            }
+
+            .site-header .social-icons a:focus .fa, .site-header .social-icons a:hover .fa {
+                color: $text_links_hover;
+            }
+
+            .footer-widgets .widget .social-icons a:focus i, .footer-widgets .widget .social-icons a:hover i {
                 color: $text_links_hover;
             }
         
@@ -249,24 +267,24 @@ function accent_colors() {
        $out .= "
        
        .accent .button {
-            border-color: $primary_button;
-            color: $primary_button;
+            border-color: $primary_button!important;
+            color: $primary_button!important;
         }
         .accent .button:hover {
-            border-color: $primary_button_hover;
-            color: $primary_button_hover;
+            border-color: $primary_button_hover!important;
+            color: $primary_button_hover!important;
         }
         
         .accent .button.secondary {
-            background: $primary_button;
-            border: 1px solid $primary_button;
-            color: #fff;
+            background: $primary_button!important;
+            border: 1px solid $primary_button!important;
+            color: #fff!important;
         }
         
         .accent .button.secondary:hover {
-            background: $primary_button_hover;
-            border: 1px solid $primary_button_hover;
-            color: #fff;
+            background: $primary_button_hover!important;
+            border: 1px solid $primary_button_hover!important;
+            color: #fff!important;
         }
         
         .accent .tribe-events-button, 
@@ -279,35 +297,35 @@ function accent_colors() {
         }
         
         .accent.post-type-archive-tribe_events .tribe-events-sub-nav a {
-            color: $primary_button;
-            border: 1px solid $primary_button;
+            color: $primary_button!important;
+            border: 1px solid $primary_button!important;
         }
         
         .accent.post-type-archive-tribe_events .tribe-events-sub-nav a:hover {
-            color: $primary_button_hover;
-            border: 1px solid $primary_button_hover;
+            color: $primary_button_hover!important;
+            border: 1px solid $primary_button_hover!important;
         }
         
         
         .accent.single-post .nav-links a {
-            color: $primary_button;
-            border: 1px solid $primary_button;
+            color: $primary_button!important;
+            border: 1px solid $primary_button!important;
         }
         
         .accent.single-post .nav-links a:hover {
-            color: $primary_button;
-            border: 1px solid $primary_button;
+            color: $primary_button!important;
+            border: 1px solid $primary_button!important;
         }
         
         
         .accent .nav-primary .menu .donate a {
-            background: $primary_button;
-            color: #fff;
+            background: $primary_button!important;
+            color: #fff!important;
         }
         
         .accent .nav-primary .menu .donate:hover a {
-            background: $primary_button_hover;
-            color: #fff;
+            background: $primary_button_hover!important;
+            color: #fff!important;
         }
         
        
@@ -344,11 +362,11 @@ function accent_colors() {
        $out .= "
 
         .accent .site-footer a {
-            color: $footer_links;
+            color: $footer_links!important;
         }
         
         .accent .site-footer a:hover {
-            color: $footer_links_hover;
+            color: $footer_links_hover!important;
         }
 
        

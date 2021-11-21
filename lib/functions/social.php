@@ -51,7 +51,9 @@ function _s_get_social_icons( $profiles = array() ) {
         
         'twitter' => '<i class="fa fa-twitter-square" aria-hidden="true"></i>',
         
-        'instagram' => '<i class="fa fa-instagram" aria-hidden="true"></i>'
+        'instagram' => '<i class="fa fa-instagram" aria-hidden="true"></i>',
+
+        'youtube' => '<i class="fa fa-youtube" aria-hidden="true"></i>'
      
      );
      

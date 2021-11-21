@@ -28,23 +28,38 @@ $time = sprintf( '<span class="event-time">%s</span>', tribe_get_start_time( nul
 // Price - custom field
 $price = get_field( 'event_price' );
 $price = sprintf( '<span class="event-price">%s</span>', $price );
-  
-// But ticket link
-$cta_button_text = get_field( 'event_cta_button_text' );
-$cta_button_link = get_field( 'event_cta_button_link' );  
 
 $buttons = sprintf( '<a href="%s" class="url button primary">%s</a>', 
            $permalink, esc_html__( 'More info', 'the-events-calendar' ) );
 
+$button = '';
+
+// Button 1
+$cta_button_text = get_field( 'event_cta_button_text' );
+$cta_button_link = get_field( 'event_cta_button_link' );  
 $event_id = get_field( 'event_brite_id', $event );
 
-if( ! empty( $event_id ) && !empty( $cta_button_text ) ) {
-    $buttons .= event_brite_button( $cta_button_text, $event_id );
-} else {
-    if( !empty( $cta_button_text ) && !empty( $cta_button_link ) ) {
-        $buttons .= sprintf( '<a href="%s" class="button secondary" rel="bookmark">%s</a>', $cta_button_link, $cta_button_text );
+if( !empty( $cta_button_text ) ) {
+    if( !empty( $cta_button_link ) ) {
+        $button = sprintf( '<a href="%s" class="button secondary" rel="bookmark">%s</a>', $cta_button_link, $cta_button_text );
+    }
+    
+    if( ! empty( $event_id ) ) {
+        $button = event_brite_button( $cta_button_text, $event_id );
     }
 }
+
+/* $cta_button_text_2 = get_field( 'event_cta_button_text_2' );
+$cta_button_link_2 = get_field( 'event_cta_button_link_2' );
+$event_id_2 = get_field( 'event_brite_id_2' );
+
+
+if( !empty( $cta_button_text_2 ) &&  ( !empty( $cta_button_text_2 ) || !empty( $event_id_2 ) ) ) {
+    $button = '';
+} */
+
+$buttons .= $button;
+
 
 ?>
 

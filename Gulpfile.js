@@ -1,6 +1,6 @@
 //process.env.DISABLE_NOTIFIER = true; // Uncomment to disable all Gulp notifications.
 
-var proxy = 'https://coastaljazz.vanwp.ca';
+var proxy = 'https://coastaljazz.local';
 
 // Require our dependencies.
 var args         = require('yargs').argv,

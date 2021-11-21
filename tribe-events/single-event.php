@@ -76,12 +76,29 @@ $thumbnail = sprintf( '<div class="event-thumbnail"><span class="event-date%s">%
             $event_id = get_field( 'event_brite_id' );
 
             if( ! empty( $event_id ) && !empty( $event_cta_button_text ) ) {
-                $button = event_brite_button( $event_cta_button_text, $event_id );
+                $button = show_pass_button( $event_cta_button_text, $event_id );
             } else {
                 if( !empty( $event_cta_button_text ) && !empty( $event_cta_button_link ) ) {
                     $button = sprintf( '<a href="%s" class="button secondary" rel="bookmark">%s</a>', $event_cta_button_link, $event_cta_button_text );
                 }
             }
+
+            // CTA Button 2
+            /* $button_2 = '';
+            $event_cta_button_text_2 = get_field( 'event_cta_button_text_2' );
+            $event_cta_button_link_2 = get_field( 'event_cta_button_link_2' );
+            
+            $event_id_2 = get_field( 'event_brite_id_2' );
+
+            if( ! empty( $event_id_2 ) && !empty( $event_cta_button_text_2 ) ) {
+                $button_2 = show_pass_button( $event_cta_button_text_2, $event_id_2 );
+            } else {
+                if( !empty( $event_cta_button_text_2 ) && !empty( $event_cta_button_link_2 ) ) {
+                    $button_2 = sprintf( '<a href="%s" class="button secondary" rel="bookmark">%s</a>', $event_cta_button_link_2, $event_cta_button_text_2 );
+                }
+            } */
+
+            $button_2 = sprintf('<span class="button showpass-cart-button" href="#"><i class="fa fa-shopping-cart"></i><span>%s</span></span>', 'Shopping Cart' ); // show pass shopping cart
 
             ?>
         
@@ -93,6 +110,9 @@ $thumbnail = sprintf( '<div class="event-thumbnail"><span class="event-date%s">%
                 echo '<hr style="margin: 22px 0;" />';
                 echo $event_meta;
                 echo $button;
+                if( ! empty( $event_id ) && !empty( $event_cta_button_text ) ) {
+                    echo $button_2;
+                }
                 //echo '<hr />';
                 ?>
             </div>

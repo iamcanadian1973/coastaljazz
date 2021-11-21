@@ -31,12 +31,16 @@
     "gulp-wp-pot": "^1.1.1",
     "gulp-zip": "*",
     "motion-ui": "*",
+    "npm-force-resolutions": "0.0.10",
     "postcss-focus": "*",
     "slick-carousel": "*"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"No test specified\""
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   },
   "repository": {
     "type": "git",

@@ -55,7 +55,7 @@ function get_upcoming_events() {
 
     $posts = [];
     
-    $args = array(
+   $args = array(
            // 'eventDisplay' => 'custom',
            'start_date'     => 'now',
            'posts_per_page' => 10,           
@@ -69,9 +69,6 @@ function get_upcoming_events() {
        );
     
     $events = tribe_get_events( $args );
-    
-    var_dump( $args );
-    
     
     // exclude_from_home
         
@@ -170,7 +167,7 @@ function get_related_events( $post_ids ) {
     $posts = [];
         
     $args  = array(
-       //'eventDisplay' => 'list',
+       'eventDisplay' => 'list',
        'posts_per_page' => 100 );
     
     //$args['orderby'] = 'post__in';
@@ -355,6 +352,22 @@ function event_brite_button( $text, $event_id = false ) {
     $output = ob_get_contents();
     ob_end_clean();
     return $output;
+
+}
+
+function show_pass_button( $text, $event_id = false ) {
+    
+    if( empty( $event_id ) || empty( $text ) ) {
+        return false;
+    }
+
+    if( ! shortcode_exists( 'showpass_widget' ) ) {
+        return false;
+    }
+
+    $button = sprintf( '[showpass_widget label="%s" slug="%s" class="button secondary" keep_shopping="true"]', $text, $event_id );
+    
+    return do_shortcode( $button );
 
 }
 
