@@ -35,7 +35,6 @@
     "postcss-focus": "*",
     "slick-carousel": "*"
   },
-  "devDependencies": {},
   "scripts": {
     "preinstall": "npx npm-force-resolutions"
   },

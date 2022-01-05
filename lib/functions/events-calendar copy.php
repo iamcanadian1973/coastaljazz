@@ -411,15 +411,15 @@ https://theeventscalendar.com/knowledgebase/k/set-calendar-to-show-specific-mont
 */
 
 function bsc_festival_to_day_view( $query ) {
-    
-    if ( is_admin() ) return;
+
+	if ( is_admin() ) return;
     
     $event_id = false;
     
 	/*
 	Check if the festival category is in the query, send the day view of the next event if so
 	*/
-	if( tribe_is_day() && is_tax( 'tribe_events_cat', 'festival' ) ){
+	if( get_query_var( 'tribe_events_cat' ) == 'festival' ){
 
 		$term = get_term_by( 'slug', 'festival', 'tribe_events_cat' );
 		
@@ -444,25 +444,23 @@ function bsc_festival_to_day_view( $query ) {
             }
         }
         
+
         
         if( $event_id ) {
             $day = tribe_get_start_date( $event_id, false, 'Y-m-d' );
             $week = tribe_get_first_week_day( $day );
         }
 
-       $link = Tribe__Events__Main::instance()->getLink( 'list' ); 
+        $link = Tribe__Events__Main::instance()->getLink( 'list', $week, $term ); 
         
         $query_args = array( 
-                        'tribe_eventcategory' => '2',
-                        'tribe-bar-date' => $day
+                        'tribe_eventcategory' => '2'
         );
-
-        /// /events/category/festival/day/2022-02-03/
         
         $redirect 	= add_query_arg( $query_args, $link );
 		
 		header( 'Location: ' . $redirect  );
-        exit();
+        exit();			
 	
 	}
 	
@@ -562,111 +560,30 @@ function bsc_festival_to_day_view( $query ) {
     
 
 }
-//add_action( 'tribe_events_pre_get_posts', 'bsc_festival_to_day_view', 1 );
+add_action( 'tribe_events_pre_get_posts', 'bsc_festival_to_day_view', 1 );
 
 
 function tribe_force_event_date( $query ) {
         
     // Don't touch single posts or queries other than the main query
-    if ( $query->is_main_query() && is_tax( 'tribe_events_cat' ) ) {
+    if ( is_single() ) {
         return;
     }
 
-   
-    $query->set('start_date', '2022-02-03');
+    // var_dump( $query->get( 'eventDisplay' ) );
  
-    /* // Change this to whatever date you prefer
-    $default_date = '2022-02-03';
+    // If a date has already been set by some other means, bail out
+    if ( strlen( $query->get( 'eventDate' ) ) || ! empty( $_REQUEST['tribe-bar-date'] ) ) {
+        return;
+    }
+ 
+    // Change this to whatever date you prefer
+    $default_date = '2022-10-01';
  
     // Use the preferred default date
     $query->set( 'eventDate', $default_date );
     $query->set( 'event_date', $default_date );
-    $_REQUEST['tribe-bar-date'] = $default_date; */
+    $_REQUEST['tribe-bar-date'] = $default_date;
 }
  
-// add_action( 'tribe_events_pre_get_posts', 'tribe_force_event_date' ); 
-
-
-function my_logged_in_redirect() {
-     
-    
-    if( is_tax( 'tribe_events_cat' ) ){
-		
-        $redirect = false;
-		
-        $link = get_term_link( get_queried_object() ); 
-        
-        $today = get_query_var( 'eventDate', date( 'Y-m-d' ) );
-        
-        
-        $events = tribe_get_events(
-				array(
-					'eventDisplay'=>'list',
-					'posts_per_page'=>1,
-                    'start_date' => date( 'Y-m-d H:i:s', strtotime( 'today' ) ),
-					'tax_query'=> array(
-						array(
-							'taxonomy' => 'tribe_events_cat',
-							'field' => 'slug',
-							'terms' => get_queried_object()->slug
-						)
-					)
-                ),
-                false
-			);
-        
-        if( ! empty( $events ) ) {
-            $event = $events[0];
-
-            $event_date = tribe_get_start_date( $event->ID, false, 'Y-m-d' );
-
-            /* echo "\n\nToday:" . $today;
-
-            echo "\n\nquery strinf date:" .$event_date; */
-
-            if( $today < $event_date ) {
-
-                if( tribe_is_day() ) {
-
-                    $redirect 	= sprintf( '%sday/%s', trailingslashit( $link ), $event_date );
-                        
-                } else if( tribe_is_week() ) {
-                    //$week = tribe_get_first_week_day( $event_date );
-                    //$redirect 	= sprintf( '%sweek/%s', trailingslashit( $link ), $week );
-                } else {
-                    // do nothing
-                }                
-            }
-        }
-
-        if( $redirect ) {
-            header( 'Location: ' . $redirect  );
-            exit();
-        }
-        
-       
-	
-	}
-     
-}
-// add_action( 'template_redirect', 'my_logged_in_redirect' );
-
-
-
-/* add_filter( 'tribe_events_views_v2_view_day_repository_args', 'tec_exclude_events_category', 10, 3 );
-//add_filter( 'tribe_events_views_v2_url_day_query_args', 'tec_exclude_events_category', 10, 3 );
- 
-function tec_exclude_events_category( $repository_args, $context, $view ) {
-  error_log(print_r($repository_args, 1 ));
- 
-  return $repository_args;
-} */
-
-/* add_filter(
-    'tribe_events_views_v2_view_day_repository_args',
-    function ( $args ) {
-      $args['starts_after'] = '2022-01-01';
-      $args['starts_after'] = '2022-01-01';
-      return $args;
-    }
-  ); */
+//add_action( 'tribe_events_pre_get_posts', 'tribe_force_event_date' ); 

@@ -1,0 +1,37 @@
+// Tribe Events V2
+
+.tribe-events {
+	padding: 40px 0;
+}
+
+.tribe-events-l-container {
+	padding-top: 0!important;
+}
+
+.tribe-common .tribe-events-header__breadcrumbs {
+	display: none!important;
+}
+
+.tribe-common .tribe-events-c-search__button {
+	@include button;
+	background: $gold; 
+        border: 1px solid $gold;
+        color: #fff;
+		border-radius: 0;
+		font-weight: 300;
+
+        
+        &:hover {
+            background: $light-gold; 
+            border-color: $light-gold;
+            color: #fff;
+        }   
+}
+
+
+.tribe-events .tribe-events-c-top-bar {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

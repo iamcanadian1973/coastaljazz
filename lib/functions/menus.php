@@ -122,7 +122,7 @@ function set_current_menu_class($classes) {
             $event_category = get_queried_object(); 
         }        
             
-        $menu_to_set = ( 2 == $event_category ) ? 'menu-item-234' : 'menu-item-217';
+        $menu_to_set = ( 2 == $event_category->term_id ) ? 'menu-item-234' : 'menu-item-217';
         
         $classes = array_filter($classes, "remove_parent_classes");
         
