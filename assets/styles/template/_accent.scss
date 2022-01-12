@@ -166,10 +166,10 @@ $accent-primary-hover: scale-color($accent-primary, $lightness: 20%);
 }
 
 /* Events */
-
-.accent .tribe-events-button, body #tribe-events .tribe-events-button {
+/* removed 2022 */
+/* .accent .tribe-events-button, body #tribe-events .tribe-events-button {
     background: $accent-primary!important;
-}
+} */
 
 .accent .post-type-archive-tribe_events .tribe-events-sub-nav a {
     background: #fff;

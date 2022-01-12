@@ -241,12 +241,12 @@ function accent_colors() {
                 color: $text_links_hover;
             }
 
-            .tribe-events-button:focus, 
+            /* .tribe-events-button:focus, 
             .tribe-events-button:hover, 
             body #tribe-events .tribe-events-button:focus, 
             body #tribe-events .tribe-events-button:hover {
                 background: $text_links_hover!important;
-            }
+            } */
 
             .site-header .social-icons a:focus .fa, .site-header .social-icons a:hover .fa {
                 color: $text_links_hover;
@@ -287,14 +287,14 @@ function accent_colors() {
             color: #fff!important;
         }
         
-        .accent .tribe-events-button, 
+        /* .accent .tribe-events-button, 
         .accent #tribe-events .tribe-events-button {
             background: $primary_button!important;
         }
         .accent .tribe-events-button:hover, 
         .accent #tribe-events .tribe-events-button:hover {
             background: $primary_button_hover!important;
-        }
+        } */
         
         .accent.post-type-archive-tribe_events .tribe-events-sub-nav a {
             color: $primary_button!important;

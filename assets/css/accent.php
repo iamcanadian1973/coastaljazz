@@ -197,6 +197,8 @@ $primary_colors =
     color: #fff;
 }
 
+/* 
+Removed 2022
 .accent .tribe-events-button, 
 .accent #tribe-events .tribe-events-button {
     background: $primary_accent!important;
@@ -204,7 +206,7 @@ $primary_colors =
 .accent .tribe-events-button:hover, 
 .accent #tribe-events .tribe-events-button:hover {
     background: $primary_accent_hover!important;
-}
+} */
 
 
 /* Footer Buttons */
