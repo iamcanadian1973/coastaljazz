@@ -27,7 +27,7 @@ $title = sprintf( '<h5><a class="url" href="%s" rel="bookmark">%s</a></h5>', $pe
 $venue = sprintf( '<span class="event-venue">%s</span>', tribe_get_venue_link( $event->ID ) );
 
 // time
-$time = sprintf( '<span class="event-time">%s</span>', tribe_get_start_time( null, 'M j, g:iA' ) );
+$time = sprintf( '<span class="event-time">%s</span>', tribe_get_start_time( null, 'g:iA' ) );
 
 // Price - custom field
 $price = get_field( 'event_price' );

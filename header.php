@@ -47,7 +47,7 @@
                 
                 
                 <button class="search" data-toggle="search-form"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    <div class="dropdown-pane bottom" id="search-form" data-dropdown>
+                    <div class="dropdown-pane bottom" id="search-form" data-dropdown data-position="left" data-alignment="top">
                       <?php
                       get_search_form();
                       ?>

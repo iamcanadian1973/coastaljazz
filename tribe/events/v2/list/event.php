@@ -30,10 +30,19 @@ $title = sprintf( '<h5><a class="url" href="%s" rel="bookmark">%s</a></h5>', $pe
 $venue = sprintf( '<span class="event-venue">%s</span>', tribe_get_venue_link( $event->ID ) );
 
 // time
-$time = sprintf( '<span class="event-time">%s</span>', tribe_get_start_time( null, 'M j, g:iA' ) );
+
+$format = 'M j, g:iA';
+
+if( tribe_is_week() || tribe_is_day() ) {
+	$format = 'g:iA';
+}
+
+
+$time = sprintf( '<span class="event-time">%s</span>', tribe_get_start_time( null, $format ) );
 
 // Price - custom field
-$price = get_field( 'event_price' );
+$price = get_field( 'event_price', $event );
+
 $price = sprintf( '<span class="event-price">%s</span>', $price );
 
 $icons = get_event_icons( $event, true );
@@ -49,8 +58,7 @@ $icons = get_event_icons( $event, true );
 				<div>
 				<?php
 				echo $title;
-				echo $venue;
-				echo $time;
+				printf( '<div class="event-venue-time">%s%s</div>', $time, $venue );
 				echo $price;
 				echo $icons;
 				?>
@@ -64,8 +72,8 @@ $icons = get_event_icons( $event, true );
 				
 				$button = '';
 
-				$cta_button_text = get_field( 'event_cta_button_text' );
-				$cta_button_link = get_field( 'event_cta_button_link' );  
+				$cta_button_text = get_field( 'event_cta_button_text', $event );
+				$cta_button_link = get_field( 'event_cta_button_link', $event );  
 				$event_id = get_field( 'event_brite_id', $event );
 
 				if( !empty( $cta_button_text ) ) {

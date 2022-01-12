@@ -1,53 +1,40 @@
 {
-  "name": "_s",
+  "name": "cloastaljazz",
   "version": "1.0.0",
-  "description": "A theme boilerplate based on Underscores from Automattic.",
-  "main": "Gulpfile.js",
-  "dependencies": {
-    "autoprefixer": "*",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "browser-sync": "*",
-    "css-mqpacker": "^6.0.2",
-    "del": "^3.0.0",
-    "foundation-sites": "6.3.1",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "*",
-    "gulp-babel": "^7.0.1",
-    "gulp-cached": "*",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssnano": "^2.1.0",
-    "gulp-filter": "*",
-    "gulp-imagemin": "^3.4.0",
-    "gulp-notify": "*",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.3.0",
-    "gulp-rename": "*",
-    "gulp-replace": "^0.5.4",
-    "gulp-sass": "*",
-    "gulp-sort": "^1.1.1",
-    "gulp-sourcemaps": "*",
-    "gulp-uglify": "*",
-    "gulp-wp-pot": "^1.1.1",
-    "gulp-zip": "*",
-    "motion-ui": "*",
-    "npm-force-resolutions": "0.0.10",
-    "postcss-focus": "*",
-    "slick-carousel": "*"
-  },
+  "private": true,
   "scripts": {
-    "preinstall": "npx npm-force-resolutions"
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production"
   },
-  "resolutions": {
-    "graceful-fs": "^4.2.4"
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "copy-webpack-plugin": "^10.0.0",
+    "foundation-sites": "6.6.3",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "jquery": "^3.6.0",
+    "laravel-mix": "^6.0.39",
+    "laravel-mix-copy-watched": "^2.3.1",
+    "laravel-mix-imagemin": "^1.0.3",
+    "laravel-mix-polyfill": "^3.0.1",
+    "motion-ui": "*",
+    "postcss": "^8.4.4",
+    "postcss-custom-properties": "^12.0.0",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.44.0",
+    "sass-loader": "^12.3.0",
+    "slick-carousel": "*",
+    "targets-webpack-plugin": "^3.0.0",
+    "webpack": "^5.64.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iamcanadian1973/_s.git"
-  },
-  "keywords": [
-    "theme"
-  ],
-  "author": "Kyle Rumble",
-  "license": "GPL-3.0"
+  "dependencies": {
+    "core-js": "^3.20.2",
+    "footable-v3": "^1.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "jquery-match-height": "^0.7.2",
+    "regenerator-runtime": "^0.13.9"
+  }
 }

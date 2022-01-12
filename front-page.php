@@ -109,8 +109,7 @@ get_header(); ?>
                 section_blog();
             }
         }
-       
-        
+          
         
         function section_cta() {
                     
@@ -172,11 +171,38 @@ get_header(); ?>
             _s_section_open( $attr );
             
             print( '<header class="column row"><h3>Upcoming Shows</h3></header>' );	
+
+            $data_slick = [
+                'infinite'       => true,
+                'dots'           => false,
+                'slidesToShow'   => 3,
+                'slidesToScroll' => 1,
+                'arrows'         => true,
+                'prevArrow'      => '<div class="arrow-left"><i class="fa fa-chevron-left" aria-hidden="true"><span>Previous</span></i></div>',
+                'nextArrow'      => '<div class="arrow-right"><i class="fa fa-chevron-right" aria-hidden="true"><span>Next</span></i></div>',
+                'responsive'     => [
+                    [
+                      'breakpoint' => 980,
+                      'settings' => [
+                        'slidesToShow' => 2
+                        ]
+    
+                      ]
+                      ,
+                    [
+                        'breakpoint' => 640,
+                        'settings' => [
+                          'slidesToShow' => 1
+                          ]
+                      ]
+    
+                ]
+            ];
             
             // Only use Slider if more than 4 events
             if( count( $events ) > 3 ) {
                 print( '<div class="column row">' );
-                printf( '<div class="slick-shows">%s</div>', implode( '', $events ) );
+                printf( '<div class="slick slick-shows" data-slick="%s">%s</div>', esc_attr( json_encode( $data_slick ) ), implode( '', $events ) );
                 print( '</div>' );
             }
             else {
@@ -217,11 +243,38 @@ get_header(); ?>
             print( '<header class="column row"><h3>Featured Events</h3></header>' );		
             
             print( '<div class="column row">' );
+
+            $data_slick = [
+                'infinite'       => true,
+                'dots'           => false,
+                'slidesToShow'   => 3,
+                'slidesToScroll' => 1,
+                'arrows'         => true,
+                'prevArrow'      => '<div class="arrow-left"><i class="fa fa-chevron-left" aria-hidden="true"><span>Previous</span></i></div>',
+                'nextArrow'      => '<div class="arrow-right"><i class="fa fa-chevron-right" aria-hidden="true"><span>Next</span></i></div>',
+                'responsive'     => [
+                    [
+                      'breakpoint' => 980,
+                      'settings' => [
+                        'slidesToShow' => 2
+                        ]
+    
+                      ]
+                      ,
+                    [
+                        'breakpoint' => 640,
+                        'settings' => [
+                          'slidesToShow' => 1
+                          ]
+                      ]
+    
+                ]
+            ];
                         
             if( count( $events ) > 3 && true == $slick ) {
                 
                 print( '<div class="column row">' );
-                printf( '<div class="slick-shows">%s</div>', implode( '', $events ) );
+                printf( '<div class="slick slick-shows" data-slick="%s">%s</div>', esc_attr( json_encode( $data_slick ) ), implode( '', $events ) );
                 print( '</div>' );
              }
             else {

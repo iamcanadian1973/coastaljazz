@@ -49,7 +49,7 @@ if ( $hide_weekends ) {
 		data-view-breakpoint-pointer="<?php echo esc_attr( $breakpoint_pointer ); ?>"
 	<?php endif; ?>
 >
-	<div class="tribe-common-l-container tribe-events-l-container">
+	<div class="cj-tribe-common-l-container cj-tribe-events-l-container">
 
 		<?php $this->template( 'components/loader', [ 'text' => __( 'Loading...', 'tribe-events-calendar-pro' ) ] ); ?>
 

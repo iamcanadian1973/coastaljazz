@@ -27,7 +27,7 @@ $all_events = [];
 
 ?>
 
-<div class="tribe-events-pro-week-grid__body" role="rowgroup">
+<div class="tribe-events-pro-week-grid__body" style="margin-top: 20px;" role="rowgroup">
 
 	<?php if ( count( $multiday_events ) && $has_multiday_events ) : ?>
 
@@ -63,7 +63,7 @@ $all_events = [];
 	foreach( $all_events as $day => $start_time ) {
 
 		$date = date_create( $day );
-		printf( '<h4>%s</h4>', date_format($date , 'l, F j' ) );
+		printf( '<h4 class="tribe-events-list-separator-month">%s</h4>', date_format($date , 'l, F j' ) );
 		
 		ksort($start_time);
 

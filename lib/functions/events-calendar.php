@@ -306,11 +306,11 @@ function get_event_icons( $event, $show_empty = false ) {
             
     // Share icons
     
-    $calendar_links = '<a href="' . Tribe__Events__Main::instance()->esc_gcal_url( tribe_get_gcal_link() ) . '" title="' . esc_attr__( 'Add to Google Calendar', 'the-events-calendar' ) . '">+ ' . esc_html__( 'Google Calendar', 'the-events-calendar' ) . '</a>';
-    $calendar_links .= '<a href="' . esc_url( tribe_get_single_ical_link() ) . '" title="' . esc_attr__( 'Download .ics file', 'the-events-calendar' ) . '" >+ ' . esc_html__( 'iCal Export', 'the-events-calendar' ) . '</a>';
+    $calendar_links = '<li><a href="' . Tribe__Events__Main::instance()->esc_gcal_url( tribe_get_gcal_link() ) . '" title="' . esc_attr__( 'Add to Google Calendar', 'the-events-calendar' ) . '">+ ' . esc_html__( 'Google Calendar', 'the-events-calendar' ) . '</a></li>';
+    $calendar_links .= '<li><a href="' . esc_url( tribe_get_single_ical_link() ) . '" title="' . esc_attr__( 'Download .ics file', 'the-events-calendar' ) . '" >+ ' . esc_html__( 'iCal Export', 'the-events-calendar' ) . '</a></li>';
     
     $icons .= sprintf( '<button type="button" data-toggle="event-%s"><i class="fa fa-calendar-plus" aria-hidden="true"></i></button>
-<div class="dropdown-pane top add-to-calendar" id="event-%s" data-dropdown data-hover="true" data-hover-pane="true">%s</div>', 
+<div class="dropdown-pane top add-to-calendar" id="event-%s" data-dropdown data-position="bottom" data-alignment="center" data-hover="true" data-hover-pane="true"><ul class="menu vertical">%s</ul></div>', 
                    $event_id,
                    $event_id,
                    $calendar_links

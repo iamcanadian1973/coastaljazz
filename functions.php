@@ -22,13 +22,19 @@ if ( ! function_exists( '_s_setup' ) ) :
 		*****************************************/
 		define( 'THEME_DIR', get_template_directory() );
 		define( 'THEME_URL', get_template_directory_uri() );
+		define( 'THEME_DIST', THEME_URL . '/dist' );
 		define( 'THEME_LANG', THEME_URL . '/languages' );
 		define( 'THEME_FAVICONS', THEME_URL . '/favicons' );
 		define( 'THEME_ASSETS', THEME_URL . '/assets' );
 		define( 'THEME_LIB', THEME_URL . '/lib' );
 		define( 'THEME_CSS', THEME_ASSETS . '/css' );
-		define( 'THEME_IMG', THEME_ASSETS . '/images' );
+		// define( 'THEME_IMG', THEME_ASSETS . '/images' );
 		define( 'THEME_JS', THEME_ASSETS . '/scripts' );
+
+		define( 'THEME_STYLES', THEME_DIST . '/styles' );
+        define( 'THEME_IMG', THEME_DIST . '/images' );
+        define( 'THEME_SCRIPTS', THEME_DIST . '/scripts' );
+		
  		
 		define( 'THEME_NAME', sanitize_title( wp_get_theme() ) );
 		define( 'THEME_VERSION', '1.0' );	
@@ -165,3 +171,10 @@ function _s_add_editor_styles() {
     add_editor_style( trailingslashit( THEME_CSS ) . '/editor.css' );
 }
 add_action( 'init', '_s_add_editor_styles' );
+
+
+
+function example_theme_support() {
+    remove_theme_support( 'widgets-block-editor' );
+}
+add_action( 'after_setup_theme', 'example_theme_support' );
